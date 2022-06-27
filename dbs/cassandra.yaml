@@ -33,7 +33,7 @@ spec:
       terminationGracePeriodSeconds: 1800
       containers:
       - name: cassandra
-        image: gcr.io/google-samples/cassandra:v13
+        image: docker.io/library/cassandra:latest
         imagePullPolicy: Always
         ports:
         - containerPort: 7000
@@ -79,14 +79,14 @@ spec:
             valueFrom:
               fieldRef:
                 fieldPath: status.podIP
-        readinessProbe:
-          exec:
-            command:
-            - /bin/bash
-            - -c
-            - /ready-probe.sh
-          initialDelaySeconds: 15
-          timeoutSeconds: 5
+        # readinessProbe:
+        #   exec:
+        #     command:
+        #     - /bin/bash
+        #     - -c
+        #     - /ready-probe.sh
+        #   initialDelaySeconds: 15
+        #   timeoutSeconds: 5
         # These volume mounts are persistent. They are like inline claims,
         # but not exactly because the names need to match exactly one of
         # the stateful pod volumes.
