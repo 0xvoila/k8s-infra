@@ -1,3 +1,8 @@
+# kubectl run kafka-client --rm -ti --image bitnami/kafka:3.1.0 -- bash 
+# kafka-console-producer.sh --topic test --request-required-acks all --bootstrap-server 10.244.1.23:9092,10.244.1.24:9092,10.244.1.25:9092
+# kafka-console-consumer.sh --topic test --from-beginning --bootstrap-server 10.244.1.23:9092,10.244.1.24:9092,10.244.1.25:9092
+
+
 apiVersion: v1
 kind: Service
 metadata:
