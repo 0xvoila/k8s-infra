@@ -51,7 +51,7 @@ spec:
             - name: DEFAULT_REPLICATION_FACTOR
               value: '2'
             - name: DEFAULT_MIN_INSYNC_REPLICAS
-              value: '1'
+              value: '2'
           volumeMounts:
             - name: data
               mountPath: /mnt/kafka
